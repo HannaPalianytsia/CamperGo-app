@@ -8,13 +8,13 @@ const CatalogPage = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    dispatch(fetchAdverts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchAdverts());
+  // }, [dispatch]);
 
-  useEffect(() => {
-    if (page > 1) dispatch(loadMoreAdverts(page));
-  }, [dispatch, page]);
+  // useEffect(() => {
+  //   if (page > 1) dispatch(loadMoreAdverts(page));
+  // }, [dispatch, page]);
 
   const handleLoadMoreClick = () => setPage(page + 1);
 

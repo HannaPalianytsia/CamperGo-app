@@ -1,0 +1,75 @@
+.modalContent {
+  width: 902px;
+  height: 640px;
+}
+.name {
+  font-size: 24px;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.camperAddInfo {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.iconsContainer {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.rating {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  margin-bottom: 24px;
+}
+.imageGallery {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.camperImg {
+  border-radius: 10px;
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+}
+.description {
+  color: #475467;
+  margin-bottom: 44px;
+}
+
+.btnContainer {
+  position: relative;
+  padding-bottom: 24px;
+  display: flex;
+  gap: 40px;
+}
+.btnContainer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 1px;
+  background-color: rgba(16, 24, 40, 0.2);
+  width: 100%;
+}
+.infoBtn {
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+}
+.infoBtn:hover,
+.infoBtn:focus {
+  background: transparent;
+}
+.selectedInfo {
+}

@@ -2,7 +2,6 @@
   margin: 0 auto;
   border-bottom: 1px solid rgba(16, 24, 40, 0.2);
   padding: 24px;
-  width: 100%;
 }
 .navList {
   display: flex;

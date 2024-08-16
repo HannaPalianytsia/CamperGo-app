@@ -4,11 +4,11 @@ import {
   selectAdverts,
   selectIsAllAdvertsLoaded,
 } from "../../redux/adverts/selectors";
-// import { adverts } from "./adverts";
+import { adverts } from "./adverts";
 import styles from "./AdvertsList.module.css";
 
 const AdvertsList = ({ handleLoadMoreClick }) => {
-  const adverts = useSelector(selectAdverts);
+  // const adverts = useSelector(selectAdverts);
   const isAllAdvertsLoaded = useSelector(selectIsAllAdvertsLoaded);
 
   return (
