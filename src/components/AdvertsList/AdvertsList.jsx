@@ -4,14 +4,15 @@ import {
   selectAdverts,
   selectIsAllAdvertsLoaded,
 } from "../../redux/adverts/selectors";
+// import { adverts } from "./adverts";
+import styles from "./AdvertsList.module.css";
 
 const AdvertsList = ({ handleLoadMoreClick }) => {
   const adverts = useSelector(selectAdverts);
   const isAllAdvertsLoaded = useSelector(selectIsAllAdvertsLoaded);
 
-  //   console.log(adverts);
   return (
-    <div>
+    <div className={styles.advertsList}>
       <ul>
         {adverts.map((advert) => (
           <li key={advert._id}>
@@ -20,7 +21,11 @@ const AdvertsList = ({ handleLoadMoreClick }) => {
         ))}
       </ul>
       {!isAllAdvertsLoaded && (
-        <button type="button" onClick={handleLoadMoreClick}>
+        <button
+          className={styles.loadMoreBtn}
+          type="button"
+          onClick={handleLoadMoreClick}
+        >
           Load more
         </button>
       )}
