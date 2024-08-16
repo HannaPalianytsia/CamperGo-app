@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchAdverts } from "./operations";
+import { fetchAdverts, loadMoreAdverts } from "./operations";
 
 const advertsInitialState = {
   items: [],
@@ -21,6 +21,18 @@ const advertsSlice = createSlice({
         state.items = payload;
       })
       .addCase(fetchAdverts.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      })
+      .addCase(loadMoreAdverts.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(loadMoreAdverts.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.items.push(...payload);
+      })
+      .addCase(loadMoreAdverts.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
       }),
