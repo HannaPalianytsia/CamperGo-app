@@ -15,17 +15,12 @@ const CatalogPage = () => {
     if (page > 1) dispatch(loadMoreAdverts(page));
   }, [dispatch, page]);
 
-  const handleClick = () => {
-    setPage(page + 1);
-  };
+  const handleLoadMoreClick = () => setPage(page + 1);
 
   return (
     <div>
       <h2>CatalogPage</h2>
-      <AdvertsList />
-      <button type="button" onClick={handleClick}>
-        Load more
-      </button>
+      <AdvertsList handleLoadMoreClick={handleLoadMoreClick} />
     </div>
   );
 };

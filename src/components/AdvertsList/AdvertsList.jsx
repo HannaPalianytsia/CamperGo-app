@@ -1,9 +1,13 @@
 import { useSelector } from "react-redux";
 import AdvertCard from "../AdvertCard/AdvertCard";
-import { selectAdverts } from "../../redux/adverts/selectors";
+import {
+  selectAdverts,
+  selectIsAllAdvertsLoaded,
+} from "../../redux/adverts/selectors";
 
-const AdvertsList = () => {
+const AdvertsList = ({ handleLoadMoreClick }) => {
   const adverts = useSelector(selectAdverts);
+  const isAllAdvertsLoaded = useSelector(selectIsAllAdvertsLoaded);
 
   //   console.log(adverts);
   return (
@@ -15,6 +19,11 @@ const AdvertsList = () => {
           </li>
         ))}
       </ul>
+      {!isAllAdvertsLoaded && (
+        <button type="button" onClick={handleLoadMoreClick}>
+          Load more
+        </button>
+      )}
     </div>
   );
 };

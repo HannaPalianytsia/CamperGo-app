@@ -5,6 +5,7 @@ const advertsInitialState = {
   items: [],
   loading: false,
   error: null,
+  isAllAdvertsLoaded: false,
 };
 
 const advertsSlice = createSlice({
@@ -30,7 +31,14 @@ const advertsSlice = createSlice({
       })
       .addCase(loadMoreAdverts.fulfilled, (state, { payload }) => {
         state.loading = false;
-        state.items.push(...payload);
+        if (payload.length === 0) {
+          state.isAllAdvertsLoaded = true;
+        } else {
+          state.items.push(...payload);
+          if (payload.length < 4) {
+            state.isAllAdvertsLoaded = true;
+          }
+        }
       })
       .addCase(loadMoreAdverts.rejected, (state, { payload }) => {
         state.loading = false;
